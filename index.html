@@ -250,13 +250,26 @@
             margin: 0 auto 2rem;
             padding: 5px;
             background: conic-gradient(from 0deg, #f472b6, #fbbf24, #34d399, #818cf8, #f472b6);
-            animation: ringRotate 6s linear infinite;
+            animation: ringColorFlow 6s linear infinite;
             box-shadow: 0 0 50px rgba(244, 114, 182, 0.3);
+            /* Smooth zoom in - zoom out animation */
+            animation: zoomPhoto 3.5s ease-in-out infinite, ringColorFlow 6s linear infinite;
         }
 
-        @keyframes ringRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        /* Photo zoom in - zoom out smoothly */
+        @keyframes zoomPhoto {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+
+        /* Ring border color flow - NO rotation */
+        @keyframes ringColorFlow {
+            0% { background: conic-gradient(from 0deg, #f472b6, #fbbf24, #34d399, #818cf8, #f472b6); }
+            25% { background: conic-gradient(from 90deg, #fbbf24, #34d399, #818cf8, #f472b6, #fbbf24); }
+            50% { background: conic-gradient(from 180deg, #34d399, #818cf8, #f472b6, #fbbf24, #34d399); }
+            75% { background: conic-gradient(from 270deg, #818cf8, #f472b6, #fbbf24, #34d399, #818cf8); }
+            100% { background: conic-gradient(from 360deg, #f472b6, #fbbf24, #34d399, #818cf8, #f472b6); }
         }
 
         .hero-content .photo-ring-hero .photo-img {
@@ -271,10 +284,7 @@
             background-size: cover;
             background-position: center;
             border: 3px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .hero-content .photo-ring-hero .photo-img .fallback-icon {
-            display: none;
+            /* Photo itself doesn't zoom separately, the ring handles it */
         }
 
         .hero-content h1 {
