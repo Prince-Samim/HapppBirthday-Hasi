@@ -751,7 +751,7 @@
             bigHeart.addEventListener('click', function(e) {
                 for (let i = 0; i < 20; i++) {
                     const h = document.createElement('div');
-                    h.textContent = ['❤️', '💕', '💖', '💗', '💘', '💝', '✨', '🌟'][Math.floor(Math.random() * 8)];
+                    h.textContent = ['Happy Birthday', 'Hasi', '💗', '🥳'][Math.floor(Math.random() * 8)];
                     h.className = 'floating-heart';
                     h.style.left = (e.clientX + (Math.random() - 0.5) * 150) + 'px';
                     h.style.top = (e.clientY + (Math.random() - 0.5) * 100) + 'px';
@@ -768,9 +768,9 @@
             // ===== CELEBRATE BUTTON =====
             document.getElementById('celebrateBtn').addEventListener('click', function() {
                 const msg = document.getElementById('celebrationMsg');
-                msg.innerHTML = '🎉 HAPPY BIRTHDAY HASI! 🎉<br><span style="font-size:1.2rem;">You are truly special! 💖</span>';
+                msg.innerHTML = '🎉 HAPPY BIRTHDAY HASI! 🎉<br><span style="font-size:1.2rem;">তুই সত্যিই অনেক special💖</span>';
                 launchConfetti();
-                for (let i = 0; i < 80; i++) {
+                for (let i = 0; i < 50; i++) {
                     setTimeout(() => {
                         const h = document.createElement('div');
                         h.textContent = ['❤️', '🎉', '🎊', '✨', '🌟', '💕', '🎂', '🥳'][Math.floor(Math.random() * 8)];
